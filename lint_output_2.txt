@@ -1,0 +1,4 @@
+
+> praticando@0.1.0 lint C:\Users\Tailson\Downloads\Porjetos Next-React\pratica\praticando
+> eslint
+

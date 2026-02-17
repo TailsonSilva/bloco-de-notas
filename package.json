@@ -9,9 +9,14 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "add": "^2.0.6",
+    "button": "^1.1.1",
+    "card": "^2.5.4",
+    "label": "^0.2.2",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "shadcn": "^3.8.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

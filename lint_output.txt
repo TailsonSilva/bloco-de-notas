@@ -1,0 +1,49 @@
+
+> praticando@0.1.0 lint C:\Users\Tailson\Downloads\Porjetos Next-React\pratica\praticando
+> eslint
+
+
+C:\Users\Tailson\Downloads\Porjetos Next-React\pratica\praticando\src\app\page.tsx
+   4:20   warning  'useEffect' is defined but never used                            @typescript-eslint/no-unused-vars
+  76:33   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  76:164  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\Tailson\Downloads\Porjetos Next-React\pratica\praticando\src\components\Header.tsx
+  10:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\Tailson\Downloads\Porjetos Next-React\pratica\praticando\src\components\Header.tsx:10:9
+   8 |
+   9 |     useEffect(() => {
+> 10 |         setTime(new Date());
+     |         ^^^^^^^ Avoid calling setState() directly within an effect
+  11 |         const interval = setInterval(() => setTime(new Date()), 1000);
+  12 |         return () => clearInterval(interval);
+  13 |     }, []);  react-hooks/set-state-in-effect
+
+C:\Users\Tailson\Downloads\Porjetos Next-React\pratica\praticando\src\context\TaskContext.tsx
+  48:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\Tailson\Downloads\Porjetos Next-React\pratica\praticando\src\context\TaskContext.tsx:48:9
+  46 |     // Hydration fix
+  47 |     useEffect(() => {
+> 48 |         setIsClient(true);
+     |         ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  49 |     }, []);
+  50 |
+  51 |     const addTask = (newTaskData: Omit<Task, 'id' | 'createdAt' | 'completed'>) => {  react-hooks/set-state-in-effect
+
+Ô£û 5 problems (4 errors, 1 warning)
+
+ÔÇëELIFECYCLEÔÇë Command failed with exit code 1.
